@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Explain with AI",
+  "version": "1.0",
+  "description": "Right-click selected text to get an AI explanation.",
+  "permissions": ["contextMenus"],
+  "host_permissions": ["https://api.openai.com/"],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
