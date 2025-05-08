@@ -3,16 +3,45 @@
 <head>
   <title>Explain with AI</title>
   <style>
-    body { font-family: sans-serif; margin: 0; padding: 20px; }
-    textarea { width: 100%; height: 100px; }
-    button { margin-top: 10px; }
-    #response { margin-top: 20px; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      background: #f9f9f9;
+    }
+    #response {
+      flex: 1;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #333;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+      overflow-y: auto;
+    }
+    #response.show {
+      opacity: 1;
+    }
+    #question {
+      margin-top: auto;
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: #666;
+      border-top: 1px solid #ddd;
+      padding-top: 10px;
+      word-break: break-word;
+    }
+    .loading {
+      font-style: italic;
+      color: #999;
+    }
   </style>
 </head>
 <body>
-  <h3>Explain this text:</h3>
-  <textarea id="input"></textarea><br/>
-  <div id="response"></div>
+  <div id="response" class="loading">Loading explanation...</div>
+  <div id="question"></div>
 
   <script src="popup.js"></script>
 </body>
